@@ -1,12 +1,17 @@
-// const entry = getElementsByTagName('input');
-const submit = document.getElementById('submitBtn');
+const entry = document.getElementById('entry').elements;
+let data = JSON.parse(localStorage.getItem('blogData')) || [];
 
-submit.addEventListener('click', function () {
-  const entries = document.getElementsByTagName('input');
+function addEntry() {
   const blogEntry = {
-    username: entries[0].value,
-    title: entries[1].value,
-    content: entries[2].value,
-  }
-  console.log(blogEntry);
-});
+    username: entry.username.value,
+    title: entry.title.value,
+    content: entry.content.value,
+  };
+  data.push(blogEntry);
+  localStorage.setItem('blogData', JSON.stringify(data));
+};
+
+addEventListener('submit', function (eventObj) {
+  eventObj.preventDefault();
+  addEntry();
+})
