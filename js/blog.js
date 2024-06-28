@@ -6,9 +6,12 @@ function displayEntries() {
   for (const entry of entries) {
     blogList.insertAdjacentHTML('beforeend', `
     <article>
-      <header> <h2>${entry.title}</h2> <h3>${entry.username}</h3> </header>
+      <header>
+        <h2>${entry.title}</h2>
+        <h3>${entry.username}</h3>
+      </header>
       <p>${entry.content}</p>
-<article>
+    <article>
 `)
   }
 }

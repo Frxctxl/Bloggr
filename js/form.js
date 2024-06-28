@@ -9,6 +9,7 @@ function addEntry() {
   };
   data.push(blogEntry);
   localStorage.setItem('blogData', JSON.stringify(data));
+  window.location.href = 'blog.html';
 };
 
 addEventListener('submit', function (eventObj) {
